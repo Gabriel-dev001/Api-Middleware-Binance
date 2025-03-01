@@ -1,16 +1,27 @@
-from django.shortcuts import render
-
-from rest_framework.response import Response
 from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .service import get_historical_price  # Importa a função do service.py
 
-@api_view(['GET'])
-def mensagem_api(request):
+@api_view(["PUT"])
+def get_crypto_price(request):
     """
-    Retorna uma lista de mensagens de teste.
+    Recebe um JSON com `symbol` e `date`, consulta a Binance e retorna o preço.
+    Exemplo de corpo da requisição:
+    {
+        "symbol": "BTC",
+        "date": "2024-02-01"
+    }
     """
-    mensagens = [
-        {"texto": "Gabriel aLindo"},
-        {"id": 2, "texto": "API Django funcionando!"},
-    ]
-    return Response(mensagens)
+    try:
+        data = request.data
+        symbol = data.get("symbol")
+        date = data.get("date")
 
+        if not symbol or not date:
+            return Response({"error": "Campos 'symbol' e 'date' são obrigatórios"}, status=400)
+
+        result = get_historical_price(symbol, date) 
+        return Response(result)
+
+    except Exception as e:
+        return Response({"error": str(e)}, status=500)

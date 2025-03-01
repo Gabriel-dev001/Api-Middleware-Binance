@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import mensagem_api
+from .views import get_crypto_price
 
 urlpatterns = [
-    path('mensagens/', mensagem_api, name='mensagens_api'),
+    path('historical-price/', get_crypto_price, name='historical-price'),
 ]
