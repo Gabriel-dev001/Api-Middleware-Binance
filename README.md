@@ -9,7 +9,6 @@ Essa API serve como um middleware para buscar o preço histórico de criptomoeda
 - **Python** (Django REST Framework)
 - **Docker**
 - **Binance API**
-- 
 
 ## 🛠 Como Rodar o Projeto
 
@@ -76,7 +75,9 @@ PUT /historical-price/
     "date": "2024-02-01",
     "price": "42500.50"
 }
+```
 
 # 📞 CONTATO  
 
-👨‍💻 **Desenvolvedor:** **Gabriel**  
+👨‍💻 **Desenvolvedor:** **Gabriel**
+
