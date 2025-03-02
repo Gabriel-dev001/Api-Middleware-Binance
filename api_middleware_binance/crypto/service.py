@@ -22,7 +22,7 @@ def get_historical_price(symbol, date):
         return {
             "symbol": symbol.upper(),
             "date": date,
-            "price": data[0][4]  # Preço de fechamento do dia
+            "price": data[0][4] 
         }
 
     except requests.exceptions.RequestException as e:

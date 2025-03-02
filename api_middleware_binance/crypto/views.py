@@ -1,6 +1,6 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .service import get_historical_price  # Importa a função do service.py
+from .service import get_historical_price
 
 @api_view(["PUT"])
 def get_crypto_price(request):
