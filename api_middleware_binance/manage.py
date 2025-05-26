@@ -20,3 +20,10 @@ def main():
 
 if __name__ == '__main__':
     main()
+    
+# Ativar Venv:
+# venv\Scripts\activate  
+
+# cd api_middlewere
+# python manage.py runserver 9000
+
