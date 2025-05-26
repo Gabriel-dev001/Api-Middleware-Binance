@@ -23,6 +23,7 @@ if __name__ == '__main__':
     
 # Ativar Venv:
 # venv\Scripts\activate  
+# deactivate
 
 # cd api_middlewere
 # python manage.py runserver 9000
